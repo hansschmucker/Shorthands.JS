@@ -22,3 +22,11 @@ jobs:
           name: js-artifact
           path: Shorthand.js
           retention-days: 90
+          
+      - name: Release
+        uses: softprops/action-gh-release@v2
+        with:
+          files: |
+            Shorthand.js
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
