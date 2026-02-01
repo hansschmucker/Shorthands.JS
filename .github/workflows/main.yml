@@ -23,7 +23,7 @@ jobs:
           path: Shorthand.js
           retention-days: 90
           
-      - name: 'Create Release'
-        run: hub release create release_name -m SingleFile -a Shorthand.js
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+#      - name: 'Create Release'
+#        run: hub release create release_name -m SingleFile -a Shorthand.js
+#        env:
+#          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}*/
