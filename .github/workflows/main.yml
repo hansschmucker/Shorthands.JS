@@ -1,0 +1,24 @@
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Merge JS Files
+        run: |
+          find . -type f -name '*.js' ! -name 'Shorthand.js' -exec cat {} + > Shorthand.js
+
+      - name: Upload Merged
+        uses: actions/upload-artifact@v2
+        with:
+          name: js-artifact
+          path: Shorthand.js
+          retention-days: 1
