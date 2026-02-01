@@ -21,4 +21,4 @@ jobs:
         with:
           name: js-artifact
           path: Shorthand.js
-          retention-days: 1
+          retention-days: 90
