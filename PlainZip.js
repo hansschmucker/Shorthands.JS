@@ -90,6 +90,8 @@ PlainZip.prototype.finalize=function(){
 	let offSetLocalHeader='00 00 00 00';
 	let zip=this.zip;
 	for(const name in zip){
+		if(!zip.hasOwnProperty(name))
+            continue;
 		let modTime=(()=>{
 			const lastMod=new Date(zip[name].modTime);
 			const hour=this._dec2bin(lastMod.getHours(),5);
