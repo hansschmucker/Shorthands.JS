@@ -4,13 +4,8 @@ Array.prototype.toXlsx=function(name){
     for(var i=0;i<this.length;i++){
         var row=doc.createElement("row");
         for(var j=0;j<this[i].length;j++){
-            var cell=doc.createElement("c");
-            cell.setAttribute("t","inlineStr");
-            var cellContent=doc.createElement("is");
-            cell.appendChild(cellContent);
-            var cellText=doc.createElement("t");
-            cellContent.appendChild(cellText);
-            cellText.textContent=""+this[i][j];
+            var cell='<c t="inlineStr"><is><t></t></is></c>'.asXml();
+            cell.querySelector('t').textContent=""+this[i][j];
             row.appendChild(cell);
         }
         root.appendChild(row);
