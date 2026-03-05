@@ -3,12 +3,12 @@
  * @method
  * @instance
  * @memberOf Array
- * @name last
+ * @name getLast
  * @returns {Object|undefined}
  * @param filter {function} Optional callback to filter the array with before returning the last entry
  * @param default {Object} Optional return value if no entry in result.
  */
-Object.defineProperty(Array.prototype,"last",{value:function last(filter,def) {
+Object.defineProperty(Array.prototype,"getLast",{value:function getLast(filter,def) {
     if(filter)
         var r= this.filter(filter);
     else
