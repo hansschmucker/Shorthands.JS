@@ -151,7 +151,7 @@ PlainZip.prototype.getObjectURL=function(){
  * @instance
  * @memberOf PlainZip
  * @name download
- * @param filename {string} Filename to be offered for download
+ * @param [filename] {string} Filename to be offered for download (overrides previously configured name if set)
  * @returns {undefined}
  */
 PlainZip.prototype.download=function(filename){
