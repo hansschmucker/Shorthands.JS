@@ -4,7 +4,7 @@
  * @instance
  * @memberOf Array
  * @name toXlsx
- * @param name {string} Name of the file to be offered for download
+ * @param [name] {string} Name of the file to be offered for download. Defaults to a GUID otherwise.
  * @returns {PlainZip}
  */
 
