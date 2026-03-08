@@ -1,5 +1,5 @@
 /**
- * Groups an array into a nested tree meaning for each param the array that would be an array turns itself into a value:results dictionary
+ * Returns an array containing array with 0 being the item of this that was matches and 1 being an array of all entries of arr that returned true when passed to match
  * @method
  * @instance
  * @memberOf Array
