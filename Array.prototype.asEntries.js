@@ -6,9 +6,10 @@
  * @name asEntries
  */
 
-Array.prototype.asEntries = function asEntries() {
-    return Object.fromEntries(this);
-};
-
-Object.defineProperty(Array.prototype,"asEntries",{enumerable:false})
-
+if(!Array.prototype.asEntries){
+    Array.prototype.asEntries = function asEntries() {
+        return Object.fromEntries(this);
+    };
+    
+    Object.defineProperty(Array.prototype,"asEntries",{enumerable:false});
+}
