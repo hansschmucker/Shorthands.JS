@@ -8,10 +8,13 @@
  * @param filter {function} Optional callback to filter the array with before returning the last entry
  * @param default {Object} Optional return value if no entry in result.
  */
-Object.defineProperty(Array.prototype,"getLast",{value:function getLast(filter,def) {
-    if(filter)
-        var r= this.filter(filter);
-    else
-        var r=this;
-    return r.length?r[r.length-1]:def;
-}});
+if(!Array.prototype.getLast){
+    Object.defineProperty(Array.prototype,"getLast",{value:function getLast(filter,def) {
+        if(filter)
+            var r= this.filter(filter);
+        else
+            var r=this;
+        return r.length?r[r.length-1]:def;
+    }});
+}
+
