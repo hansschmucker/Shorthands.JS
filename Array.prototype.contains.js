@@ -13,3 +13,4 @@ if(!Array.prototype.contains){
         return this.indexOf(b)>=0;
     }});
 }
+
