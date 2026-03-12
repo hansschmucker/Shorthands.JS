@@ -8,11 +8,14 @@
  * @param filter {function} Optional callback to filter the array with before returning the first entry
  * @param default {Object} Optional return value if no entry in result.
  */
-Object.defineProperty(Array.prototype,"getFirst",{value:function getFirst(filter,def) {
-    if(filter)
-        var r=this.filter(filter);
-    else
-        var r=this;
+if(!Array.prototype.getFirst){
+    Object.defineProperty(Array.prototype,"getFirst",{value:function getFirst(filter,def) {
+        if(filter)
+            var r=this.filter(filter);
+        else
+            var r=this;
+    
+        return r.length?r[0]:def;
+    }});
+}
 
-    return r.length?r[0]:def;
-}});
