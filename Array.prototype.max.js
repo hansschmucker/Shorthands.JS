@@ -7,6 +7,9 @@
  * @returns {number}
  */
 
-Object.defineProperty(Array.prototype,"max",{value:function max() {
-    return Math.max(...this);
-}});
+if(!Array.prototype.hasOwnProperty("max")){
+    Object.defineProperty(Array.prototype,"max",{enumerable:false,max:function max() {
+        return Math.max(...this);
+    }});
+}
+
