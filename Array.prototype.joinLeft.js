@@ -8,8 +8,8 @@
  * @param secondArray {Array} Array to be joined
  * @param matcher {function} A callback to be called with each line of self (with params(selfLine,secondArrayLine)) to determine a match
  */
-if(!Array.prototype.joinLeft){
-    Object.defineProperty(Array.prototype,"joinLeft",{value:function joinLeft(arr,match) {
+if(!Array.prototype.hasOwnProperty("joinLeft")){
+    Object.defineProperty(Array.prototype,"joinLeft",{enumerable:false,value:function joinLeft(arr,match) {
         return this.map(a=>[a,arr.filter(b=>match(a,b))]);
     }});
 }
