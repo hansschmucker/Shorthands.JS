@@ -9,8 +9,8 @@
  * @param grouper2 {function|string} Either a callback to be used for grouping or the name of a field to be performed on each result of grouper1
  * @param grouperN {function|string} Either a callback to be used for grouping or the name of a field to be performed on each result of previous grouper
  */
-if(!Array.prototype.groupBy){
-  Object.defineProperty(Array.prototype,"groupBy",{value:function groupBy(args) {
+if(!Array.prototype.hasOwnProperty("groupBy")){
+  Object.defineProperty(Array.prototype,"groupBy",{enumerable:false,value:function groupBy(args) {
     args=[...arguments];
     
     var data=Object.groupBy(this,typeof(args[0])=="function"?args[0]:function(field,line){ return line[field]; }.bind(null,args[0]) );
