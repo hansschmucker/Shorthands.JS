@@ -6,11 +6,9 @@
  * @name asEntries
  */
 
-if(!Array.prototype.asEntries){
-    Array.prototype.asEntries = function asEntries() {
+if(!Array.prototype.hasOwnProperty("asEntries")){
+    Object.defineProperty(Array.prototype,"asEntries",{enumerable:false,value:function asEntries() {
         return Object.fromEntries(this);
-    };
-    
-    Object.defineProperty(Array.prototype,"asEntries",{enumerable:false});
+    }});
 }
 
