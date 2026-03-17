@@ -7,9 +7,8 @@
  * @returns {boolean}
  * @param b {Object} Value to search for
  */
-
-if(!Array.prototype.contains){
-    Object.defineProperty(Array.prototype,"contains",{value:function contains(b) {
+if(!Array.prototype.hasOwnProperty("contains")){
+    Object.defineProperty(Array.prototype,"contains",{enumerable:false,value:function contains(b) {
         return this.indexOf(b)>=0;
     }});
 }
