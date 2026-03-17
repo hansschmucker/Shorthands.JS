@@ -7,11 +7,10 @@
  * @returns {Array}
  * @param serialize {boolean} If set will return distinct JSON-serialized (deserialized again after distinct)
  */
-
-if(!Array.prototype.distinct){
-    Object.defineProperty(Array.prototype,"distinct",{value:function distinct(serialize) {
+if(!Array.prototype.hasOwnProperty("distinct")){
+    Object.defineProperty(Array.prototype,"distinct",{enumerable:false,value:function distinct(serialize) {
         if(serialize){
-            return this.map(a=>a.toJson()).distinct().map(a=>a.asJson());
+            return this.map(a=>a.toJson()).distinct().map(a=>JSON.stringify(a));
         }else{
             return this.reduce((p,a)=>{
                 if(p.indexOf(a)<0)
