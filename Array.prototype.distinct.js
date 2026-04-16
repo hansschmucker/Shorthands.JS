@@ -10,7 +10,7 @@
 if(!Array.prototype.hasOwnProperty("distinct")){
     Object.defineProperty(Array.prototype,"distinct",{enumerable:false,value:function distinct(serialize) {
         if(serialize){
-            return this.map(a=>a.toJson()).distinct().map(a=>JSON.stringify(a));
+            return this.map(a=>a.toJson()).distinct().map(a=>a.asJson());
         }else{
             return this.reduce((p,a)=>{
                 if(p.indexOf(a)<0)
