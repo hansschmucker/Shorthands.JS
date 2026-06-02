@@ -7,3 +7,4 @@
 /** @class Image */
 /** @class Object */
 /** @class String */
+/** @class Promise */
