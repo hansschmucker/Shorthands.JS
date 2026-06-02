@@ -5,8 +5,8 @@
  * @returns {Promise}
  */
 
-function sleep(ms){
+Window.prototype.sleep=function sleep(ms){
   return new Promise((ok,err)=>{
     window.setTimeout(ok,ms);
   });
-}
+};
