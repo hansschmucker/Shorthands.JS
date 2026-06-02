@@ -3,6 +3,7 @@
 /** @class HTMLSelectElement */
 /** @class Date */
 /** @class Document */
+/** @class Window */
 /** @class Image */
 /** @class Object */
 /** @class String */
